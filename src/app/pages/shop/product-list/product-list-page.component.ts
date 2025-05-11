@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from "../../../shared/components/footer/footer.component";
 import { ProductResponse } from '../../../shared/models/product.model';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -14,7 +15,11 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
 export default class ProductListComponent implements OnInit {
 
   public productService = inject( ProductService );
+
   public cdr = inject( ChangeDetectorRef );
+
+  private router = inject( Router );
+
   public products: ProductResponse[] = [];
 
   ngOnInit(): void {
@@ -25,10 +30,10 @@ export default class ProductListComponent implements OnInit {
           this.cdr.detectChanges();
         }
       );
-
   }
 
-
-
-
+  // Método para navegar a los detalles del producto
+  goToProductDetails(productId: number) {
+    this.router.navigate(['/shop/product', productId]);
+  }
 }

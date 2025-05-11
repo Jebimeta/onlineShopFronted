@@ -1,11 +1,9 @@
-
 <shared-navbar></shared-navbar>
 <div class="container-fluid parallax2">
   <div class="products">
     <div class="row">
       <h1>Listado de Productos</h1>
     </div>
-
     <ul *ngFor="let product of products" class="product-list">
         <li class="product-item">
           <div class="product-card">
@@ -17,20 +15,14 @@
               <p class="product-type"><strong>Tipo:</strong> {{ product.type }}</p>
               <p class="product-price"><strong>Precio:</strong> {{ product.price }} €</p>
               <div class="buttons">
-
                 <button class="button-paynow">Compra YA</button>
                 <button class="button-cart">Agregar al carrito</button>
-
-
+                <button class="button-details" (click)="goToProductDetails(product.id)">Ver Detalles</button>
               </div>
-            
             </div>
           </div>
         </li>
     </ul>
   </div>
-
 </div>
 <shared-footer></shared-footer>
-
-
