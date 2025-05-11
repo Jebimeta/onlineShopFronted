@@ -1,0 +1,65 @@
+/* Estilo general del footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+/* Contenedor */
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Orientación enlaces */
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Titulos */
+.footer h5 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Enlaces */
+.footer .value {
+  color: #8089df;
+  text-decoration: none;
+}
+
+/* Iconos redes sociales */
+.footer .social-icons a {
+  margin: 0 10px;
+  font-size: 18px;
+  color: #8089df;
+  text-decoration: none;
+}
+
+/* Enlaces */
+.footer a:hover {
+  color: #fff;
+}
+
+/* Iconos redes sociales */
+.footer .social-icons a:hover{
+  color: #fff;
+}
+
+/* Copyright */
+.footer .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.footer .copyright:hover{
+  color: #dcdcdc;
+}
