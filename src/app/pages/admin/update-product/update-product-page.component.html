@@ -1,0 +1,104 @@
+<shared-navbar/>
+
+<div class="background-container">
+  <div class="background-image"></div>
+</div>
+
+<div class="product-update-container" *ngIf="product; else noProduct">
+  <form class="product-form" [formGroup]="productForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+    <!-- Nombre del Producto -->
+    <div class="form-group">
+      <h3>Nombre del producto</h3>
+      <input
+        type="text"
+        class="form-control"
+        required
+        formControlName="name"
+      />
+    </div>
+
+    <!-- Descripción -->
+    <div class="form-group">
+      <h3>Descripción</h3>
+      <input
+        type="text"
+        class="form-control"
+        required
+        formControlName="description"
+      />
+    </div>
+
+    <!-- Actualizar Imagen -->
+    <div class="form-group">
+      <h3>Actualizar imagen</h3>
+      <img class="image-preview" [style]="{ width: '700px', height: '750px' }" *ngIf="imagePreview" [src]="imagePreview" alt="preview" />
+      <input
+        type="file"
+        class="form-control"
+        name="image"
+        required
+        (change)="onFileSelected($event)"
+        formControlName="image"
+      />
+    </div>
+
+    <!-- Tamaño -->
+    <div class="form-group">
+      <h3>Tamaño</h3>
+      <select
+          class="form-select"
+          id="inputGroupSelect01"
+          required
+          formControlName="size"
+          placeholder="Tamaño del formato">
+            <option selected>10 x 10</option>
+            <option value="20 x 20">20 x 20</option>
+            <option value="40 x 40">40 x 40</option>
+            <option value="60 x 60">60 x 60</option>
+        </select>
+    </div>
+
+    <!-- Tipo de Producto -->
+    <div class="form-group">
+      <h3>Tipo de producto</h3>
+      <select
+        class="form-select"
+        id="inputGroupSelect02"
+        required
+        formControlName="type"
+        placeholder="Tipo de producto">
+          <option selected>Lámina</option>
+          <option value="Ilustración">Ilustración</option>
+          <option value="Cartel">Cartel</option>
+          <option value="Cuadro">Cuadro</option>
+      </select>
+    </div>
+
+    <!-- Precio -->
+    <div class="form-group">
+      <h3>Precio</h3>
+      <input
+        type="number"
+        class="form-control"
+        required
+        formControlName="price"
+      />
+    </div>
+
+    <!-- Botones -->
+    <div class="button-group">
+      <button type="submit" class="btn-update">Actualizar producto</button>
+      <button type="button" class="btn-back" (click)="goBack()">Retroceder</button>
+    </div>
+
+  </form>
+</div>
+
+<!-- No Product Found -->
+<ng-template #noProduct>
+  <div class="no-product-found">
+    <p>El producto no ha sido encontrado.</p>
+    <button class="btn-back" (click)="goBack()">Retroceder</button>
+  </div>
+</ng-template>

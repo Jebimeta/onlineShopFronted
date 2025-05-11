@@ -1,0 +1,31 @@
+<shared-navbar></shared-navbar>
+
+
+    <div class="box-login img">
+        <form (ngSubmit)="login()" class="form-login">
+            <div class="titulo">
+                <h1><span class="text-uppercase">Inicio de sesión</span></h1>
+                <hr>
+            </div>
+            <div class="loginuser mt-5">
+                <label class="labels-box" for="email">Correo electrónico</label>
+                <input type="email" class="email" id="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" placeholder="correo_registrado@gmail.com" required minlength="8">
+            </div>
+            <div class="loginuser">
+                <label class="labels-box" for="password">Contraseña</label>
+                <input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" placeholder="*********" required minlength="5" id="password">
+            </div>
+            <div class="loginuser mt-4">
+                <input type="submit" value="Entrar">
+            </div>
+
+            <p class="goToRegister mt-5" (click)="goToRegister()">¿Todavía no te has registrado?</p>
+          </form>
+    </div>
+
+    
+                   <!-- Footer -->
+                   <shared-footer></shared-footer>
+
+
+

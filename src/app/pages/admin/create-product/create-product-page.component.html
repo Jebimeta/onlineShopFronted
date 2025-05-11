@@ -1,0 +1,92 @@
+<div class="form-container">
+  <div class="padding container d-flex justify-content-center">
+    <div class="col-md-10 col-md-offset-1">
+        <form class="signup-form" [formGroup]="productForm" enctype="multipart/form-data">
+            <h2 class="text-center">CREAR PRODUCTO</h2>
+            <hr>
+            <div class="form-group">
+              <input
+                type="text"
+                required
+                formControlName="name"
+                placeholder="Nombre del producto"
+                class="form-control"
+                name="Nombre del producto"
+              />
+            </div>
+            <div class="form-group mt-3">
+              <input
+                type="text"
+                required
+                formControlName="description"
+                placeholder="Descripción del producto"
+                class="form-control"
+                name="Descripcion del producto"
+              />
+            </div>
+            <div class="input-group mt-3">
+              <div class="input-group mb-3">
+                <input
+                  type="file"
+                  class="form-control"
+                  name="image"
+                  required
+                  (change)="onFileSelected($event)"
+                  formControlName="image"
+                >
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">Tamaño del producto</label>
+              <select
+                class="form-select"
+                id="inputGroupSelect01"
+                required
+                formControlName="size"
+                placeholder="Tamaño del formato">
+                  <option selected>10 x 10</option>
+                  <option value="20 x 20">20 x 20</option>
+                  <option value="40 x 40">40 x 40</option>
+                  <option value="60 x 60">60 x 60</option>
+              </select>
+            </div>
+
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">Tipo de producto</label>
+              <select
+                class="form-select"
+                id="inputGroupSelect02"
+                required
+                formControlName="type"
+                placeholder="Tipo de producto">
+                  <option selected>Lámina</option>
+                  <option value="Ilustración">Ilustración</option>
+                  <option value="Cartel">Cartel</option>
+                  <option value="Cuadro">Cuadro</option>
+              </select>
+            </div>
+
+
+            <div class="form-group mt-3">
+              <input
+                type="number"
+                required
+                formControlName="price"
+                placeholder="Precio del producto"
+                class="form-control"
+                name="Precio del producto"
+              />
+            </div>
+
+            <div class="form-group text-center mt-4">
+              <button class="btn btn-blue btn-block" (click)="onSubmit()"> Crear producto </button>
+            </div>
+            <button class="btn btn-light" (click)="goBack()">Volver al listado de productos</button>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+
+

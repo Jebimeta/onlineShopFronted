@@ -1,0 +1,237 @@
+/* Estilos generales del contenedor del perfil */
+.profile-container {
+    background-color: rgb(174, 219, 240); /* Color de fondo del contenedor */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+    width: 100%; /* Ancho del contenedor */
+    display: flex; /* Utiliza flexbox para la disposición */
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra los elementos dentro del contenedor */
+    border: 2px solid #007bff; /* Borde azul alrededor del contenedor */
+    font-family: 'Montserrat', sans-serif; /* Fuente del contenido */
+  }
+  
+  /* Estilos para la imagen de perfil */
+  .profile-pic {
+    width: 120px; /* Ancho de la imagen */
+    height: 120px; /* Altura de la imagen */
+    border-radius: 50%; /* Bordes redondeados para hacer un círculo */
+    object-fit: cover; /* Ajuste de la imagen dentro del contenedor */
+    border: 4px solid #007bff; /* Borde azul alrededor de la imagen */
+    margin-bottom: 20px; /* Espaciado inferior */
+    transition: transform 0.3s ease; /* Transición para el efecto de hover */
+  }
+  
+  /* Efecto de hover para la imagen de perfil */
+  .profile-pic:hover {
+    transform: scale(1.1); /* Escala la imagen al pasar el ratón */
+  }
+  
+  /* Estilos para el nombre de la tienda */
+  .store-name {
+    font-size: 1.8rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente */
+    color: #007bff; /* Color del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+    transition: color 0.3s ease; /* Transición para el cambio de color */
+    text-align: center; /* Alineación del texto */
+  }
+  
+  /* Efecto de hover para el nombre de la tienda */
+  .store-name:hover {
+    color: #0056b3; /* Cambio de color al pasar el ratón */
+  }
+  
+  /* Sección del correo electrónico */
+  .email-section {
+    width: 100%; /* Ancho completo */
+    margin-bottom: 20px; /* Espaciado inferior */
+  }
+  
+  /* Estilos para el encabezado de la sección de correo electrónico */
+  .email-section h3 {
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+    text-align: center; /* Alineación del texto */
+  }
+  
+  /* Contenedor de los elementos del correo electrónico */
+  .email-container {
+    display: flex; /* Utiliza flexbox para la disposición */
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra los elementos dentro del contenedor */
+  }
+  
+  /* Estilos para el texto del correo electrónico */
+  .email {
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+  }
+  
+  /* Estilos para los campos de entrada */
+  .input-field {
+    width: 100%; /* Ancho completo */
+    padding: 8px; /* Espaciado interno */
+    margin: 5px 0; /* Espaciado vertical */
+    border: 2px solid #ddd; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño de la fuente */
+    transition: border-color 0.3s ease; /* Transición para el cambio de borde */
+  }
+  
+  /* Estilos para el campo de entrada en foco */
+  .input-field:focus {
+    border-color: #007bff; /* Color del borde cuando el campo está en foco */
+  }
+  
+  /* Estilos para el botón de guardar */
+  .btn-save {
+    width: 100%; /* Ancho completo */
+    padding: 12px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero */
+    font-size: 0.9rem; /* Tamaño de la fuente */
+    color: white; /* Color del texto */
+    background-color: #007bff; /* Color de fondo */
+    margin-top: 10px; /* Espaciado superior */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición para el cambio de color y efecto de escala */
+  }
+  
+  /* Efecto de hover para el botón de guardar */
+  .btn-save:hover {
+    background-color: #0329a5; /* Cambio de color al pasar el ratón */
+    transform: scale(1.02); /* Efecto de escala al pasar el ratón */
+  }
+  
+  /* Estilos para la información de contacto */
+  .contact-info {
+    width: 100%; /* Ancho completo */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 1.1rem; /* Tamaño de la fuente */
+    color: #555; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+  }
+  
+  /* Estilos para el encabezado de la información de contacto */
+  .contact-info h3 {
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+  }
+  
+  /* Estilos para los párrafos en la información de contacto */
+  .contact-info p {
+    margin: 5px 0; /* Espaciado vertical */
+  }
+  
+  /* Estilos para la sección del perfil */
+  .profile-section {
+    width: 100%; /* Ancho completo */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-align: center; /* Alineación del texto */
+  }
+  
+  /* Estilos para el encabezado de la sección del perfil */
+  .profile-section h3 {
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+    text-align: center; /* Alineación del texto */
+  }
+  
+  /* Estilos para los párrafos en la sección del perfil */
+  .profile-section p {
+    color: #555; /* Color del texto */
+    font-size: 1.2rem; /* Tamaño de la fuente */
+  }
+  
+  /* Estilos para la sección de edición */
+  .edit-section {
+    width: 100%; /* Ancho completo */
+    margin-bottom: 20px; /* Espaciado inferior */
+  }
+  
+  /* Estilos para el encabezado de la sección de edición */
+  .edit-section h3 {
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+    text-align: center; /* Alineación del texto */
+  }
+  
+  /* Estilos para los campos de entrada en la sección de edición */
+  .edit-section .input-field {
+    width: calc(100% - 16px); /* Ajuste de ancho para el padding */
+  }
+  
+  /* Estilos para los botones de acción */
+  .action-buttons {
+    display: flex; /* Utiliza flexbox para la disposición */
+    justify-content: center; /* Centra los botones */
+    width: 100%; /* Ancho completo */
+    margin-top: 20px; /* Espaciado superior */
+  }
+  
+  /* Estilos para los botones de editar y cerrar sesión */
+  .btn-edit, .btn-logout {
+    padding: 10px 15px; /* Espaciado interno */
+    margin-left: 15px; /* Espaciado a la izquierda */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero */
+    font-size: 0.9rem; /* Tamaño de la fuente */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición para el cambio de color y efecto de escala */
+  }
+  
+  /* Estilos para el botón de editar */
+  .btn-edit {
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+  }
+  
+  /* Efecto de hover para el botón de editar */
+  .btn-edit:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el ratón */
+    transform: scale(1.32); /* Efecto de escala al pasar el ratón */
+  }
+  
+  /* Estilos para el botón de cerrar sesión */
+  .btn-logout {
+    background-color: #dc3545; /* Color de fondo */
+    color: white; /* Color del texto */
+  }
+  
+  /* Efecto de hover para el botón de cerrar sesión */
+  .btn-logout:hover {
+    background-color: #c82333; /* Cambio de color al pasar el ratón */
+    transform: scale(1.32); /* Efecto de escala al pasar el ratón */
+  }
+  
+  /* Estilos generales para los encabezados h3 */
+  h3 {
+    font-weight: bold; /* Peso de la fuente */
+  }
+  
+  /* Estilos para la sección de dirección de envío */
+.shipping-address-section {
+    width: 100%; /* Ancho completo */
+    margin-bottom: 20px; /* Espaciado inferior */
+  }
+  
+  /* Estilos para el encabezado de la sección de dirección de envío */
+  .shipping-address-section h3 {
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+    text-align: center; /* Alineación del texto */
+  }
+  
+  /* Estilos para los campos de entrada en la sección de dirección de envío */
+  .shipping-address-section .input-field {
+    width: calc(100% - 16px); /* Ajuste de ancho para el padding */
+  }
+  

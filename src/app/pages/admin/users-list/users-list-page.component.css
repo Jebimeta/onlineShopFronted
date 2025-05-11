@@ -1,0 +1,84 @@
+.container-userlist {
+  display: flex;
+    max-width: 100%;
+    background-image: url("/assets/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: auto;
+    margin-bottom: 5px;
+
+  }
+  
+  .card-items {
+    display: flex; /* Alinea los elementos en una fila */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-right: 1px solid white;
+  }
+  
+  .item-container {
+    display: flex;
+    flex-direction: column; /* Coloca el label encima del valor */
+    align-items: center; /* Centra el contenido */
+    justify-content: center;
+    margin-right: 20px; /* Espacio entre columnas */
+    margin-bottom: 20px; /* Espacio en la parte inferior de cada fila */
+    min-width: 150px; /* Ancho mínimo de cada campo */
+  }
+  
+  .item-container label {
+    display: flex;
+    margin-left: 35px;
+    box-shadow: 0px 0px 20px 0px rgb(19, 31, 95);
+    margin-top: 20px;
+    padding: 2px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #1c53a5;
+    border-bottom: 1px solid gray;
+    background-color: rgb(226, 240, 241);
+  }
+  
+  .item-container div {
+    font-style: italic;
+    color: #251616;
+    margin-left: 35px;
+    background-color: #f4f4f4;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+/* Personalización de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 5px; /* Ancho de la barra de desplazamiento */
+  height: 8px; /* Altura de la barra de desplazamiento para scroll horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #a89b0a; /* Color del área de la barra de desplazamiento (trayectoria) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5c5b5b; /* Color del control de la barra de desplazamiento */
+  border-radius: 10px; /* Esquinas redondeadas para el control */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f0f326; /* Color del control al pasar el ratón por encima */
+}
+h1{
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: underline #f4f4f4;
+  color: #f4f4f4;
+  letter-spacing: 4px;
+}

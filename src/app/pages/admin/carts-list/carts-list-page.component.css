@@ -1,0 +1,52 @@
+.imagendefondo{
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width:100%;
+  height: 100vh;
+  opacity: 90%;
+}
+.cart {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #c4d7e7;
+  border-radius: 5px;
+}
+
+.cart-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.cart-date,
+.cart-status,
+.cart-total {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.cart-items li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-total {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cartTempalte{
+  padding: 20px;
+  margin-bottom: 20px;
+}
+span{
+  color: #045aa0;
+}

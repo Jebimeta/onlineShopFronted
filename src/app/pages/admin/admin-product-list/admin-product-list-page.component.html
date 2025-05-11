@@ -1,0 +1,45 @@
+<div class="page">
+  <shared-navbar/>
+
+  <div class="container-fluid">
+    <div class="cards">
+      <div class="text-center"> <!-- Contenedor principal centrado -->
+        <h1 class="mt-8">Listado de Productos</h1> <!-- Título -->
+        
+        <!-- Primera fila de botones -->
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-2 mt-8">
+          <p-button class="btn btn-blue w-240px" severity="info" label="Crear producto" (click)="create()"></p-button>
+          <p-button class="btn btn-blue w-240px" severity="info" label="Lista de usuarios" (click)="getAllUsers()"></p-button>
+        </div>
+        
+        <!-- Segunda fila de botones -->
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
+          <p-button class="btn btn-blue w-240px" severity="info" label="Ver pedidos" (click)="getAllOrders()"></p-button>
+          <p-button class="btn btn-blue w-240px" severity="info" label="Ver carritos" (click)="getAllCarts()"></p-button>
+        </div>
+      </div>
+      <div class="d-flex gap-4 flex-wrap justify-content-left">
+        <p-card class="card mb-3" header="{{ product.name }}" subheader="{{product.type}}" [style]="{ width: '320px', height: '550px' }" *ngFor="let product of products">
+          <ng-template pTemplate="header">
+              <img [src]="product.image" alt="{{ product.name }}" class="image">
+          </ng-template>
+          <ng-template pTemplate="content">
+              <div class="card-content">
+                <p><strong>Descripción:</strong> {{ product.description }}</p>
+              <div class="d-flex gap-3">
+                <p><strong>Tamaño:</strong> {{ product.size }}</p>
+                <p><strong>Precio:</strong> {{ product.price }} €</p>
+              </div>
+            </div>
+            <div class="d-flex gap-5">
+              <p-button label="Editar" class="w-full" styleClass="w-full" (click)="updateProduct(product.id)" />
+              <p-button label="Eliminar" severity="danger" class="w-full" styleClass="w-full" (click)="deleteProduct(product.id)" />
+            </div>
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+  </div>
+
+</div>
+

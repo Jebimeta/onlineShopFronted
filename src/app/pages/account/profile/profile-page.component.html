@@ -1,0 +1,49 @@
+<shared-navbar></shared-navbar>
+<div class="profile-container" *ngIf="customer">
+  <!-- Foto de perfil -->
+  <img src="/assets/images/IMG_1301.jpeg" alt="Logo de la tienda" class="profile-pic">
+
+  <!-- Nombre de la tienda -->
+  <div class="store-name">RitaRouge</div>
+
+  <!-- Correo electrónico del cliente -->
+  <div class="email-section">
+    <h3>Correo Electrónico</h3>
+    <div class="email-container">
+      <div class="email">{{ customer.email }}</div>
+      <input type="email" [(ngModel)]="newEmail" placeholder="Nuevo correo electrónico" class="input-field">
+    </div>
+    <button (click)="updateEmail()" class="btn-save">Actualizar Correo</button>
+  </div>
+
+  <!-- Información de contacto -->
+  <div class="contact-info">
+    <h3>Datos de Usuario</h3>
+    <p><strong>Dirección:</strong> {{ customer.address }}, {{ customer.province }}, {{ customer.region }}</p>
+    <p><strong>Teléfono:</strong> {{ customer.phone }}</p>
+  </div>
+
+  <!-- Sección de edición -->
+  <div class="edit-section">
+    <h3>Cambiar Contraseña</h3>
+    <input type="password" [(ngModel)]="newPassword" placeholder="Nueva contraseña" class="input-field">
+    <input type="password" [(ngModel)]="confirmNewPassword" placeholder="Confirmar nueva contraseña" class="input-field">
+    <button (click)="updatePassword()" class="btn-save">Actualizar Contraseña</button>
+  </div>
+
+  <!-- Sección para cambiar la dirección -->
+  <div class="shipping-address-section">
+    <h3>Cambiar Dirección de Envío</h3>
+    <input type="text" [(ngModel)]="newAddress" placeholder="Nueva dirección" class="input-field">
+    <input type="text" [(ngModel)]="newProvince" placeholder="Provincia" class="input-field">
+    <input type="text" [(ngModel)]="newRegion" placeholder="Región" class="input-field">
+    <input type="text" [(ngModel)]="newPhone" placeholder="Teléfono" class="input-field">
+    <button (click)="updateAddress()" class="btn-save">Actualizar Dirección</button>
+  </div>
+
+  <!-- Botones de acción -->
+  <div class="action-buttons">
+    <button class="btn-edit">Editar Perfil</button>
+    <button class="btn-logout">Cerrar Sesión</button>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<shared-navbar/>
+<div class="imagendefondo">
+<p>Detalles del pedido</p>
+<div class="order-container">
+    <h2>Detalles del Pedido</h2>
+    <form>
+      <!-- ID -->
+      <div class="form-group">
+        <label for="orderId">ID del Pedido:</label>
+        <input type="text" id="orderId" value="10" readonly />
+      </div>
+  
+      <!-- Pet ID -->
+      <div class="form-group">
+        <label for="petId">ID del Producto:</label>
+        <input type="text" id="petId" value="198772" readonly />
+      </div>
+  
+      <!-- Cantidad -->
+      <div class="form-group">
+        <label for="quantity">Cantidad:</label>
+        <input type="number" id="quantity" value="7" readonly />
+      </div>
+  
+      <!-- Fecha de Compra -->
+      <div class="form-group">
+        <label for="shipDate">Fecha de Compra:</label>
+        <input type="datetime-local" id="shipDate" value="2024-12-08T11:12" readonly />
+      </div>
+  
+      <!-- Estado -->
+      <div class="form-group">
+        <label for="status">Estado:</label>
+        <select id="status">
+          <option value="APROBADO">APROBADO</option>
+          <option value="ENVIADO">ENVIADO</option>
+          <option value="REALIZADO">REALIZADO</option>
+          <option value="COMPLETADO">COMPLETADO</option>
+        </select>
+        <div class="button-container">
+            <button>Actualizar</button>
+          </div>          
+      </div>
+  
+      <!-- Completo -->
+      <div class="form-group">
+        <label for="complete">Pedido completado</label>
+        <input type="checkbox" id="complete" />
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,178 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif; /* Fuente general */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el relleno por defecto */
+    background-color: #f9f9f9; /* Color de fondo de la página */
+    color: #333; /* Color del texto */
+}
+
+/* Contenedor principal del carrito */
+.cart-container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 40px auto; /* Espaciado automático a los lados y 20px arriba/abajo */
+    padding: 90px; /* Relleno interno del contenedor */
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Encabezado del carrito de compras */
+.cart-header {
+    border-bottom: 2px solid #007bff; /* Línea inferior azul */
+    padding-bottom: 10px; /* Espaciado interno en la parte inferior */
+    margin-bottom: 20px; /* Espaciado externo en la parte inferior */
+}
+
+.cart-header h1 {
+    color: #007bff; /* Color del texto del encabezado */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+/* Contenedor principal del carrito */
+.cart-main {
+    display: flex; /* Usa flexbox para distribuir elementos */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas más pequeñas */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+/* Sección de productos en el carrito */
+.cart-items {
+    flex: 2; /* Ocupa dos partes del espacio disponible */
+    min-width: 300px; /* Ancho mínimo para mantener el diseño */
+}
+
+.cart-items h2 {
+    margin-top: 0; /* Elimina el margen superior por defecto */
+}
+
+/* Lista de productos */
+.item-list {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el relleno */
+    margin: 0; /* Elimina el margen */
+}
+
+/* Item del carrito */
+.item {
+    display: flex; /* Usa flexbox para distribuir el contenido del producto */
+    flex-wrap: wrap; /* Permite que los elementos dentro del producto se ajusten */
+    align-items: center; /* Alinea los elementos verticalmente */
+    background-color: #f1f1f1; /* Color de fondo gris claro */
+    padding: 10px; /* Relleno interno del item */
+    margin-bottom: 10px; /* Espaciado externo en la parte inferior */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Imagen del producto */
+.item img {
+    max-width: 100px; /* Ancho máximo de la imagen */
+    max-height: 100px; /* Altura máxima de la imagen */
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+    flex-shrink: 0; /* Evita que la imagen se reduzca */
+}
+
+/* Detalles del producto */
+.item-details {
+    flex: 1; /* Ocupa el espacio restante */
+    min-width: 200px; /* Ancho mínimo para mantener el diseño */
+}
+
+/* Nombre del producto */
+.item-details h3 {
+    margin: 0; /* Elimina el margen por defecto */
+    color: #007bff; /* Color del texto */
+}
+
+/* Descripción breve del producto */
+.item-details p {
+    margin: 5px 0; /* Espacio superior e inferior */
+    color: #555; /* Color del texto */
+}
+
+/* Precio del producto */
+.item-price {
+    display: block; /* Hace que el precio ocupe toda la línea */
+    margin-top: 5px; /* Espacio superior */
+    font-weight: bold; /* Negrita */
+    border: 1px dashed red;
+    max-width: 80px;
+}
+
+/* Selector de cantidad */
+.item-quantity {
+    width: 60px; /* Ancho del selector de cantidad */
+    margin: 5px 0; /* Espacio superior e inferior */
+}
+
+/* Total por producto */
+.item-total {
+    display: block; /* Hace que el total ocupe toda la línea */
+    margin-top: 5px; /* Espacio superior */
+    font-weight: bold; /* Negrita */
+    color: #007bff; /* Color del texto */
+    text-decoration: underline;
+}
+
+/* Botón para eliminar el producto */
+.remove-item {
+    background-color: #ff4d4d; /* Color de fondo rojo */
+    color: white; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px; /* Relleno interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-top: 10px; /* Espacio superior */
+}
+
+/* Efecto al pasar el ratón sobre el botón de eliminar */
+.remove-item:hover {
+    background-color: #e60000; /* Color de fondo más oscuro al pasar el ratón */
+}
+
+/* Resumen del carrito */
+.cart-summary {
+    flex: 1; /* Ocupa el espacio restante */
+    background-color: #e9ecef; /* Color de fondo gris claro */
+    padding: 20px; /* Relleno interno */
+    border-radius: 8px; /* Bordes redondeados */
+    min-width: 200px; /* Ancho mínimo para mantener el diseño */
+}
+
+/* Título del resumen del carrito */
+.cart-summary h2 {
+    margin-top: 0; /* Elimina el margen superior por defecto */
+}
+
+/* Párrafos en el resumen del carrito */
+.cart-summary p {
+    font-size: 1.2em; /* Tamaño de fuente */
+    margin: 10px 0; /* Espacio superior e inferior */
+}
+
+/* Botón para finalizar la compra */
+.checkout-button {
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    padding: 15px; /* Relleno interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: 100%; /* Ancho completo del contenedor */
+    font-size: 1.2em; /* Tamaño de fuente */
+}
+
+/* Efecto al pasar el ratón sobre el botón de finalizar compra */
+.checkout-button:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+}
+
+/* Pie de página del carrito */
+.cart-footer {
+    text-align: center
+}
+h2{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}

@@ -1,0 +1,136 @@
+/* Parallax */
+.parallax {
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Imagen Principal */
+.ilustracion-main {
+  width: 500px;
+  height: auto;
+  /* Eliminé position: relative y top: -50px para mejor flujo */
+  display: block; /* Asegura que la imagen se comporte como bloque */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Barra Principal */
+.barra {
+  background-color: #0b4a63;
+  width: 700px;
+  height: 80px;
+  border: 2px solid #85b4cf;
+  box-shadow: 0px 0px 9px 3px #C5DDEA;
+  text-align: center;
+  border-radius: 5px;
+  margin: 20px auto;
+
+}
+
+/* Texto de la Barra */
+.laminas {
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin: 10px 0 0;
+  padding-top: 5px;
+  color: #AED3E7;
+}
+
+.encargo span {
+  font-family: 'Nanum Myeongjo', serif;
+  color: #AED3E7;
+  letter-spacing: 7px;
+  font-weight: bold;
+}
+
+/* Títulos */
+h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 90px;
+  letter-spacing: 10px;
+  text-shadow: 0px 10px 10px #091622;
+  margin-top: 13px;
+  color: black
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 10px;
+  color: #AED3E7;
+  text-shadow: 0 0 4px #091622;
+}
+
+/* Texto Secundario */
+.espacio {
+  font-weight: bolder;
+  text-align: center;
+  padding: 13px;
+  width: 500px;
+  background-color: #0b4a63;
+  color: #AED3E7;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+/* Formulario */
+.contact-section {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-container {
+  flex: 1;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tituloformulario h4 {
+  color: #00769c;
+  font-weight: bold;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #00769c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #005b73;
+}
+
+/* Mapa */
+.map-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

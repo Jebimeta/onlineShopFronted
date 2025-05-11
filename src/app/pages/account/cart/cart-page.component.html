@@ -1,0 +1,56 @@
+<shared-navbar/>
+<div class="cart-container">
+  <!-- Encabezado del carrito de compras -->
+  <header class="cart-header">
+      <h1>Carrito de Compras</h1>
+      <h2>Añade o elimina tus productos personalizados</h2>
+  </header>
+
+  <!-- Contenido principal del carrito -->
+  <main class="cart-main">
+      <!-- Sección que muestra los productos en el carrito -->
+      <section class="cart-items">
+          <h2>Productos en tu carrito</h2>
+          <ul class="item-list">
+              <!-- Item del carrito -->
+              <li class="item">
+                  <!-- Imagen del producto -->
+                  <img src="https://via.placeholder.com/100" alt="Producto 1">
+                  <div class="item-details">
+                      <!-- Nombre del producto -->
+                      <h3>Producto 1</h3>
+                      <!-- Descripción breve del producto -->
+                      <p>Descripción breve del producto 1</p>
+                      <!-- Precio del producto -->
+                      <span class="item-price">$10.00</span>
+                      <!-- Selector de cantidad -->
+                      <input type="number" value="1" min="1" class="item-quantity">
+                      <!-- Total por producto -->
+                      <span class="item-total">$10.00</span>
+                  </div>
+                  <!-- Botón para eliminar el producto del carrito -->
+                  <button class="remove-item">Eliminar</button>
+              </li>
+              <!-- Puedes agregar más productos siguiendo el mismo formato -->
+          </ul>
+      </section>
+
+      <!-- Sección que muestra el resumen del carrito -->
+      <aside class="cart-summary">
+          <h2>Resumen del carrito</h2>
+            <!-- Subtotal del carrito -->
+            <p><strong>Subtotal:</strong> $30.00</p>
+            <!-- Costos de envío -->
+            <p><strong>Envío:</strong> $5.00</p>
+            <!-- Total del carrito -->
+            <p><strong>Total:</strong> $35.00</p>
+            <!-- Botón para finalizar la compra -->
+            <button class="checkout-button">Finalizar Compra</button>
+        </aside>
+    </main>
+
+    <!-- Pie de página con el botón de continuar comprando -->
+    <footer class="cart-footer">
+        <button class="continue-shopping">Continuar Comprando</button>
+    </footer>
+</div> 

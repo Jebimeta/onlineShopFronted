@@ -1,0 +1,149 @@
+/* Contenedor principal */
+.contact-container{
+  background-color: white;
+  background-image: url("/assets/images/IMG_0320.jpeg");
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch; /* Esto hace que los hijos tengan la misma altura */
+  min-height: 100vh; /* O la altura que prefieras */
+
+
+
+}
+.form-container {
+  max-width: 50%;
+  min-width: 400px;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+  
+  /* Fondo blanco */
+  background: white;
+  
+  /* Borde negro sólido */
+  border: 2px solid black;
+  
+  /* Sombra (box-shadow) */
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2),  /* Sombra suave en la parte inferior */
+    0 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más difuminada para profundidad */
+  
+  /* Bordes redondeados */
+  border-radius: 10px;
+  
+  /* Padding interno */
+  padding: 24px;
+  
+  /* Texto en negro para mejor legibilidad */
+  color: black;
+}
+
+/* Titutlo */
+.contact-title{
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  text-shadow:
+    1px 1px 0px #000,   /* Borde superior izquierdo */
+    -1px -1px 0px #000, /* Borde inferior derecho */
+    1px -1px 0px #000,  /* Borde superior derecho */
+    -1px 1px 0px #000;  /* Borde inferior izquierdo */
+}
+
+
+
+/* Estilos para los campos del formulario */
+.form-group {
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 80%;
+  align-items: center;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow:
+  1px 1px 0px #000,   /* Borde superior izquierdo */
+  -1px -1px 0px #000, /* Borde inferior derecho */
+  1px -1px 0px #000,  /* Borde superior derecho */
+  -1px 1px 0px #000;  /* Borde inferior izquierdo */text-transform: uppercase;
+
+}
+
+input, select, textarea {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Al seleccionar en el form */
+input:focus, select:focus, textarea:focus {
+  border-color: #3c7d97;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Mensaje de error */
+small {
+  font-size: 16px;
+  color: #e74c3c;
+}
+
+/* Estilos para el botón de enviar */
+button {
+  padding: 12px 24px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 70%;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3a6076;
+}
+
+button:disabled {
+  background-color: #706868;
+  cursor: not-allowed;
+}
+
+/* Estilos para el mapa de ubicación */
+.map-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  min-width: 50%;
+  margin-right:20px;
+  height: auto; /* O puedes usar height: 100% si el padre tiene altura definida */
+  align-self: stretch; /* Asegura que ocupen toda la altura */
+
+}
+
+iframe {
+  margin: 10px;
+  width: 80%;
+  height: 80%;
+  border: 3px solid #333;
+  border-radius: 10px;
+  min-height: 500px;
+  
+}

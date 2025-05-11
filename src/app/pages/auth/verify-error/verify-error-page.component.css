@@ -1,0 +1,39 @@
+.page{
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  font-family:'Montserrat', sans-serif;
+
+}
+
+.verification{
+  padding: 80px;
+  background-color: #ffff;
+  border-radius: 2px;
+  font-family:'Montserrat', sans-serif;
+  border-radius: 50%;
+  color: red;
+  font-style: italic;
+
+
+}
+button{
+  padding: 20px 10px;
+width: 40%;  
+background-color: #d13737;
+border: 2px solid rgb(85, 0, 0);
+font-weight: bolder;
+}
+.btn:hover{
+background-color: rgb(255, 127, 127);
+font-weight: bold;
+padding: 5px 5px;
+
+}
+.mt-3{
+  position: relative;
+  left: 40px;
+
+}
