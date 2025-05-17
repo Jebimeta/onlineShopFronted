@@ -6,13 +6,13 @@
     <div class="container-fluid">
       <div class="row d-flex justify-content-center">
         <!-- Títulos -->
-        <div class="titles mt-8">
+        <div class="titles mt-5 mt-md-8">
           <h1>{{ title }}</h1>
         </div>
 
         <!-- Imagen Principal -->
         <div class="d-flex justify-content-center mt-1 mb-4">
-          <img src="/assets/ilustracion-main2.png" class="ilustracion-main" />
+          <img src="/assets/home/ilustracion-main2.webp" class="ilustracion-main img-fluid" alt="Ilustración principal" />
         </div>
 
         <!-- Barra Principal -->
@@ -23,14 +23,22 @@
           </div>
         </div>
 
-<!-- Otros Componentes -->
+        <!-- Otros Componentes -->
+        <div class="d-flex justify-content-center mt-5">
+          <shop-carrousel-component></shop-carrousel-component>
+        </div>
 
-<div class="d-flex justify-content-center mt-5">
-  <shop-carrousel-component></shop-carrousel-component>
+        <!-- Sección de Contacto -->
+        <div class="container">
+          <send-email-component></send-email-component>
+        </div>
+        <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.785609843261!2d-5.783574823576552!3d37.181565646108545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd127f0dbdf00b19%3A0x4087a59437727232!2sPl.%20del%20Altozano%2C%2041710%20Utrera%2C%20Sevilla!5e0!3m2!1ses!2ses!4v1747518631242!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<!-- Sección de Contacto -->
-<send-email-component></send-email-component>
 
 <!-- Footer -->
 <shared-footer></shared-footer>

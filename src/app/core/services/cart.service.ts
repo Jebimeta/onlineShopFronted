@@ -43,7 +43,4 @@ export class CartService {
     return this.http.delete(url, { responseType: 'text' });
   }
 
-
-
-
 }

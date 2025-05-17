@@ -1,0 +1,150 @@
+import { Component, OnInit, inject } from '@angular/core';
+import { CartService } from '../../../core/services/cart.service';
+import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
+import { CartResponse } from '../../../shared/models/cart.model';
+
+// Decorador que marca la clase como un componente Angular y provee metadatos
+@Component({
+  standalone: true, // Indica que es un componente independiente
+  imports: [NavbarComponent], // Componentes/directivas/pipes usados en este componente
+  templateUrl: './cart-page.component.html', // Ruta al template HTML
+  styleUrls: ['./cart-page.component.css'], // Ruta a los estilos CSS
+})
+// Clase CartComponent que implementa el hook del ciclo de vida OnInit
+export default class CartComponent implements OnInit {
+  // Inyectando CartService usando la función inject()
+  public cartService = inject(CartService);
+  
+  // Array para almacenar todos los carritos
+  public carts: CartResponse[] = [];
+  
+  // Variable para almacenar el carrito seleccionado actualmente
+  public selectedCart: CartResponse | null = null;
+  
+  // Variable para almacenar mensajes de feedback al usuario
+  public message: string | null = null;
+
+  // Hook del ciclo de vida ngOnInit - se llama después de que Angular inicializa el componente
+  ngOnInit(): void {
+    this.loadCarts(); // Cargar carritos cuando el componente se inicializa
+  }
+
+  // Método para cargar todos los carritos desde el servicio
+  loadCarts(): void {
+    // Suscripción al observable getCarts de CartService
+    this.cartService.getCarts().subscribe({
+      next: (carts) => {
+        this.carts = carts; // Actualizar el array de carritos con la respuesta
+      },
+      error: (err) => {
+        console.error('Error al cargar los carritos:', err); // Logear error si ocurre
+      },
+    });
+  }
+
+  // Método para cargar un carrito específico por su ID
+  loadCartById(cartId: number): void {
+    // Suscripción al observable getCartById de CartService
+    this.cartService.getCartById(cartId).subscribe({
+      next: (cart) => {
+        this.selectedCart = cart || null; // Actualizar selectedCart con la respuesta o null
+        if (!cart) {
+          // Establecer mensaje si no se encontró el carrito
+          this.message = `El carrito con ID ${cartId} no fue encontrado.`;
+        }
+      },
+      error: (err) => {
+        console.error('Error al cargar el carrito:', err); // Logear error si ocurre
+      },
+    });
+  }
+
+  // Método para crear un nuevo carrito
+  createCart(): void {
+    const newCart = new FormData(); // Crear un nuevo objeto FormData para el carrito
+
+    // Suscripción al observable createCart de CartService
+    this.cartService.createCart(newCart).subscribe({
+      next: (cart) => {
+        this.message = 'Carrito creado con éxito.'; // Mensaje de éxito
+        this.loadCarts(); // Recargar la lista de carritos
+      },
+      error: (err) => {
+        console.error('Error al crear el carrito:', err); // Logear error si ocurre
+      },
+    });
+  }
+
+  // Método para añadir un producto a un carrito
+  addProduct(cartId: number, productId: number, quantity: number): void {
+    const product = { productId, quantity }; // Crear objeto producto
+
+    // Suscripción al observable addProductToCart de CartService
+    this.cartService.addProductToCart(cartId, product).subscribe({
+      next: (cart) => {
+        // Mensaje de éxito con ID del carrito
+        this.message = `Producto añadido al carrito con ID ${cartId}.`;
+        this.loadCartById(cartId); // Recargar el carrito actualizado
+      },
+      error: (err) => {
+        console.error('Error al añadir el producto al carrito:', err); // Logear error si ocurre
+      },
+    });
+  }
+
+  // Método para eliminar un carrito
+  deleteCart(cartId: number): void {
+    // Suscripción al observable deleteCart de CartService
+    this.cartService.deleteCart(cartId).subscribe({
+      next: (response) => {
+        this.message = response; // Establecer mensaje desde la respuesta
+        this.loadCarts(); // Recargar la lista de carritos
+      },
+      error: (err) => {
+        console.error('Error al eliminar el carrito:', err); // Logear error si ocurre
+      },
+    });
+  }
+
+  // Método para eliminar un producto de un carrito
+  removeProduct(cartId: number, cartDetailsId: number): void {
+    // Suscripción al observable removeProductFromCart de CartService
+    this.cartService.removeProductFromCart(cartId, cartDetailsId).subscribe({
+      next: (response) => {
+        this.message = response; // Establecer mensaje desde la respuesta
+        this.loadCartById(cartId); // Recargar el carrito actualizado
+      },
+      error: (err) => {
+        console.error('Error al eliminar el producto del carrito:', err); // Logear error si ocurre
+      },
+    });
+  }
+}
+
+
+addToCart(product: ProductResponse): void {
+  // Obtener el carrito actual o inicializarlo con id si no existe
+  let cartData = localStorage.getItem('cart');
+  let cartObj: { id: string, items: any[] };
+
+  if (!cartData) {
+    cartObj = {
+      id: Date.now().toString(), // id único para el carrito
+      items: []
+    };
+  } else {
+    cartObj = JSON.parse(cartData);
+  }
+
+  const index = cartObj.items.findIndex((item: any) => item.id === product.id);
+
+  if (index === -1) {
+    cartObj.items.push({ ...product, quantity: 1 });
+    localStorage.setItem('cart', JSON.stringify(cartObj));
+    this.message = 'Producto añadido al carrito';
+    this.cdr.detectChanges();
+  } else {
+    this.message = 'Este producto ya está en el carrito';
+    this.cdr.detectChanges();
+  }
+}

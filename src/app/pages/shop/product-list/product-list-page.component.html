@@ -1,27 +1,26 @@
 <shared-navbar></shared-navbar>
-<div class="container-fluid parallax2">
+<div class="container-fluid products-container">
   <div class="products">
     <div class="row">
       <h1>Listado de Productos</h1>
     </div>
-    <ul *ngFor="let product of products" class="product-list">
-        <li class="product-item">
-          <div class="product-card">
-            <img class="product-image" [src]="product.image" alt="{{ product.name }}" />
-            <div class="product-info">
-              <h2 class="product-name">{{ product.name }}</h2>
-              <p class="product-description">{{ product.description }}</p>
-              <p class="product-size"><strong>Tamaño:</strong> {{ product.size }}</p>
-              <p class="product-type"><strong>Tipo:</strong> {{ product.type }}</p>
-              <p class="product-price"><strong>Precio:</strong> {{ product.price }} €</p>
-              <div class="buttons">
-                <button class="button-paynow">Compra YA</button>
-                <button class="button-cart">Agregar al carrito</button>
-                <button class="button-details" (click)="goToProductDetails(product.id)">Ver Detalles</button>
-              </div>
+    <ul class="product-list">
+      <li *ngFor="let product of products" class="product-item">
+        <div class="product-card">
+          <img class="product-image" [src]="product.image" alt="{{ product.name }}" />
+          <div class="product-info">
+            <h2 class="product-name">{{ product.name }}</h2>
+            <p class="product-description">{{ product.description }}</p>
+            <p class="product-size"><strong>Tamaño:</strong> {{ product.size }}</p><br>
+            <p class="product-type"><strong>Tipo:</strong> {{ product.type }}</p><br>
+            <p class="product-price"><strong>Precio:</strong> {{ product.price }} €</p>
+            <div class="buttons">
+              <button class="button-cart" (click)="addToCart(product)">Agregar al carrito</button>
+              <button class="button-details" (click)="goToProductDetails(product.id)">Ver Detalles</button>
             </div>
           </div>
-        </li>
+        </div>
+      </li>
     </ul>
   </div>
 </div>

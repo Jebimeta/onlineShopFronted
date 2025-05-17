@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from "../../shared/components/footer/footer.component";
 import SendEmailComponent from "./components/send-email/send-email.component";
 import CarrouselComponent from "./components/carrousel/carrousel.component";
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
+import { CartService } from '../../core/services/cart.service';
 
 @Component({
   standalone: true,
@@ -21,6 +22,7 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class HomeComponent {
+
   public title = "PUNTILLISMO SHOP"
 
 }

@@ -17,4 +17,9 @@ export class UserService {
     return this.http.get<CustomerResponse[]>(this.baseUrl);
   }
 
+  deleteCustomer( id: number ): Observable<string> {
+    const url = `${this.baseUrl}/delete/${id}`;
+    return this.http.delete(url, { responseType: 'text' });
+  }
+
 }

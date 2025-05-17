@@ -1,101 +1,59 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { CartService } from '../../../core/services/cart.service';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
-import { CartResponse } from '../../../shared/models/cart.model';
+import { Router } from '@angular/router';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, CommonModule, FormsModule],
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css'],
 })
-export default class CartComponent implements OnInit {
-  public cartService = inject(CartService);
-  public carts: CartResponse[] = [];
-  public selectedCart: CartResponse | null = null;
-  public message: string | null = null;
+export default class CartComponent {
+
+  private router = inject(Router);
+
+  public cart: any[] = [];
+
+  public cartId: string = '';
 
   ngOnInit(): void {
-    this.loadCarts();
+    this.loadCart();
   }
 
+  loadCart() {
+    // Si no existe un cartId en localStorage, lo crea con uuid
+    let cartId = localStorage.getItem('cartId');
+    if (!cartId) {
+      cartId = uuidv4();
+      localStorage.setItem('cartId', cartId);
+    }
+    this.cartId = cartId;
 
-  loadCarts(): void {
-    this.cartService.getCarts().subscribe({
-      next: (carts) => {
-        this.carts = carts;
-      },
-      error: (err) => {
-        console.error('Error al cargar los carritos:', err);
-      },
-    });
+    this.cart = JSON.parse(localStorage.getItem('cart') || '[]');
   }
 
+  removeProduct(productId: number): void {
+  // Obtiene el carrito actual del localStorage
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  // Filtra el producto a eliminar
+  const updatedCart = cart.filter((item: any) => item.id !== productId);
+  // Actualiza el localStorage
+  localStorage.setItem('cart', JSON.stringify(updatedCart));
+  // Actualiza la variable cart del componente
+  this.cart = updatedCart;
+}
 
-  loadCartById(cartId: number): void {
-    this.cartService.getCartById(cartId).subscribe({
-      next: (cart) => {
-        this.selectedCart = cart || null;
-        if (!cart) {
-          this.message = `El carrito con ID ${cartId} no fue encontrado.`;
-        }
-      },
-      error: (err) => {
-        console.error('Error al cargar el carrito:', err);
-      },
-    });
+calculateSubtotal(): number {
+  return this.cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+}
+
+
+  goToProduct(): void {
+    this.router.navigate(['/shop']);
   }
 
-  createCart(): void {
-    const newCart = new FormData();
-
-    this.cartService.createCart(newCart).subscribe({
-      next: (cart) => {
-        this.message = 'Carrito creado con éxito.';
-        this.loadCarts();
-      },
-      error: (err) => {
-        console.error('Error al crear el carrito:', err);
-      },
-    });
-  }
-
-  addProduct(cartId: number, productId: number, quantity: number): void {
-    const product = { productId, quantity };
-
-    this.cartService.addProductToCart(cartId, product).subscribe({
-      next: (cart) => {
-        this.message = `Producto añadido al carrito con ID ${cartId}.`;
-        this.loadCartById(cartId); // Recarga el carrito actualizado
-      },
-      error: (err) => {
-        console.error('Error al añadir el producto al carrito:', err);
-      },
-    });
-  }
-
-  deleteCart(cartId: number): void {
-    this.cartService.deleteCart(cartId).subscribe({
-      next: (response) => {
-        this.message = response;
-        this.loadCarts();
-      },
-      error: (err) => {
-        console.error('Error al eliminar el carrito:', err);
-      },
-    });
-  }
-
-
-  removeProduct(cartId: number, cartDetailsId: number): void {
-    this.cartService.removeProductFromCart(cartId, cartDetailsId).subscribe({
-      next: (response) => {
-        this.message = response;
-        this.loadCartById(cartId);
-      },
-      error: (err) => {
-        console.error('Error al eliminar el producto del carrito:', err);
-      },
-    });
-  }
+  
 }

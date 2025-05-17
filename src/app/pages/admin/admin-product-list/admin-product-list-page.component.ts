@@ -22,10 +22,15 @@ import { ProductResponse } from '../../../shared/models/product.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class AdminProductListComponent {
-  public productService = inject( ProductService );
-  public cdr = inject( ChangeDetectorRef );
+
+  public productService = inject(ProductService);
+
+  public cdr = inject(ChangeDetectorRef);
+
   public products: ProductResponse[] = [];
-  public router = inject( Router );
+
+  public router = inject(Router);
+
 
   ngOnInit(): void {
     this.productService.getProducts()
@@ -37,7 +42,7 @@ export default class AdminProductListComponent {
       );
   }
 
-  updateProduct( id:number ): void {
+  updateProduct(id:number): void {
     this.router.navigateByUrl( 'admin/update-product/' + id );
   }
 

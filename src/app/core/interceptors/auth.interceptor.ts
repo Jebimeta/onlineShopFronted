@@ -6,7 +6,7 @@ import { catchError, switchMap, throwError } from 'rxjs';
 export const authInterceptor: HttpInterceptorFn = (request, next) => {
   const authService = inject(AuthService);
 
-  const publicUrls = ['/auth/register', '/auth/login']; // Añade aquí los endpoints públicos
+  const publicUrls = ['/auth/register', '/auth/login'];
 
   // Si la URL es pública, procesa la solicitud sin modificar
   if (publicUrls.some(url => request.url.includes(url))) {

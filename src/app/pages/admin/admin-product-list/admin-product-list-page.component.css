@@ -5,6 +5,16 @@
   font-family: 'Poppins', sans-serif; /* Aplicar la fuente a todo el contenido (opcional) */
 }
 
+/* Centrar las tarjetas en pantalla */
+.d-flex.gap-4.flex-wrap.justify-content-left {
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  align-items: center; /* Centra las tarjetas verticalmente */
+  display: flex; /* Asegura que el contenedor use flexbox */
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas si es necesario */
+  min-height: 80vh; /* Asegura que el contenedor ocupe al menos el 80% del alto de la pantalla */
+  gap: 16px;
+}
+
 /* Estilo para el título h1 */
 h1 {
   font-size: 3rem; /* Tamaño más grande (ajusta según necesites) */
@@ -49,14 +59,60 @@ h1 {
 .image {
   max-height: 240px; /* Ajusta esta altura según tus necesidades */
   object-fit: cover; /* Asegura que la imagen se ajuste dentro del contenedor sin recortarse */
+  display: block; /* Asegura que la imagen sea tratada como un bloque */
+  margin: 10px auto; /* Centra la imagen horizontalmente */
 }
 
 .card {
   overflow: hidden;
+  border: none;
+  box-shadow: none;
 }
 
 .card-content {
   max-height: 180px;
   overflow: hidden; /* Desactivar el desplazamiento para que todo el contenido sea visible */
   padding-right: 10px; /* Espacio para la barra de desplazamiento */
+  text-align: center;
 }
+
+.card-content p {
+  margin: 10px auto; /* Asegura que los párrafos estén centrados */
+}
+
+p-card {
+  text-align: center; /* Centra el contenido general de la tarjeta */
+}
+
+/* Estilo para el botón Editar */
+.btn-edit {
+  background-color: #4caf50; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+  background-color: #45a049; /* Verde más oscuro al pasar el cursor */
+}
+
+/* Estilo para el botón Eliminar */
+.btn-delete {
+  background-color: #f44336; /* Rojo */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f; /* Rojo más oscuro al pasar el cursor */
+}
+

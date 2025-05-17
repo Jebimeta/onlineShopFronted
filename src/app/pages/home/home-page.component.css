@@ -1,9 +1,13 @@
-/* Parallax */
-.parallax {
-  background-image: url("/assets/images/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+
+.navbar-brand .logo {
+  width: 80px;
+  height: auto;
+  transition: all 0.3s ease;
+  max-height: 50px;
+}
+
+.navbar-brand:hover .logo {
+  transform: scale(1.05); /* Efecto de leve aumento al pasar el mouse */
 }
 
 /* Imagen Principal */
@@ -14,6 +18,7 @@
   display: block; /* Asegura que la imagen se comporte como bloque */
   margin: 0 auto; /* Centrado horizontal */
 }
+
 
 /* Barra Principal */
 .barra {
@@ -46,7 +51,8 @@
 
 /* Títulos */
 h1 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playwrite DK Loopet', cursive;
+  font-style: normal;
   font-weight: 700;
   text-align: center;
   font-size: 90px;
@@ -79,18 +85,22 @@ h2 {
 /* Formulario */
 .contact-section {
   display: flex;
+  flex-direction: row;
   gap: 20px;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center; /* Centrado horizontal */
 }
 
 .form-container {
   flex: 1;
+  max-width: 600px; /* Ancho máximo para el formulario */
   background-color: #f7f7f7;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Centrado horizontal adicional */
 }
 
 .tituloformulario h4 {
@@ -127,10 +137,121 @@ form button:hover {
   background-color: #005b73;
 }
 
-/* Mapa */
 .map-container {
   flex: 1;
+  max-width: 600px; /* Ancho máximo para el mapa */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Estilos generales para móviles */
+@media (max-width: 768px) {
+  /* Ajustes para el título principal */
+  h1 {
+    font-size: 40px;
+    letter-spacing: 5px;
+    margin-top: 20px;
+  }
+
+  /* Ajustes para la imagen principal */
+  .ilustracion-main {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* Ajustes para la barra */
+  .barra {
+    width: 90%;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .laminas {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .encargo span {
+    letter-spacing: 3px;
+    font-size: 14px;
+  }
+
+  .contact-section {
+    flex-direction: column;
+    align-items: center; /* Centrado de elementos en columna */
+    padding: 15px;
+  }
+
+  form input,
+  form textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  form button {
+    padding: 8px 15px;
+    width: 100%; /* Botón de ancho completo */
+  }
+  
+  .form-container,
+  .map-container {
+    width: 100%;
+    max-width: 100%; /* Ocupa el ancho disponible pero con márgenes */
+    padding: 15px;
+  }
+  
+  /* Contenedor del formulario más estrecho en móviles */
+  .form-container {
+    max-width: 90%; /* Deja márgenes a los lados */
+  }
+  
+  /* Ajusta el mapa para que sea responsive */
+  .map-container iframe {
+    width: 100%;
+    height: 300px; /* Altura fija adecuada para móviles */
+  }
+
+  /* Ajustes para el texto secundario */
+  .espacio {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  /* Ajustes para el navbar */
+  .navbar-brand .logo {
+    width: 60px;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+  }
+
+  .laminas {
+    font-size: 14px;
+  }
+
+  .encargo span {
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+
+  .contact-section {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .map-container iframe {
+    height: 250px;
+  }
+  
+  .form-container {
+    max-width: 95%; /* Un poco más ancho en pantallas pequeñas */
+    padding: 15px 10px;
+  }
 }

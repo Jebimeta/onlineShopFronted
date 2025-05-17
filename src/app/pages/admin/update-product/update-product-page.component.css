@@ -5,10 +5,6 @@
     padding: 55px;
     font-family: 'Montserrat', sans-serif;
     color: rgba(0, 0, 0, 0.788);
-    background-image: url("/assets/images/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 .image-preview{
     margin-bottom: 10px;
@@ -70,7 +66,6 @@ select:hover{
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s; /* Transiciones suaves */
 }
 
 .btn-update:hover {
@@ -89,7 +84,6 @@ select:hover{
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s; /* Transiciones suaves */
 }
 
 .btn-back:hover {

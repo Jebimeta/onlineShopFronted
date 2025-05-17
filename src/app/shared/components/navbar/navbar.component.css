@@ -3,12 +3,10 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 nav {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Playwrite DK Loopet', sans-serif;
+  font-size: larger;
   position: sticky;
-  top: 0;
-  right: 0;
-  left: 0;
-  background-color: white; /* Color principal */
+  background-color: #00a6a6;
   height: 60px;
   display: flex;
   justify-content: center;
@@ -17,6 +15,16 @@ nav {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px); /* Desenfoque para elegancia */
   z-index: 10000;
+}
+
+.navbar-brand .logo {
+  width: 50px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover .logo {
+  transform: scale(1.2); /* Efecto de leve aumento al pasar el mouse */
 }
 
 #Contacto::first-letter {
@@ -50,7 +58,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #5E91B4;
+  background-color: #F08700;
   color: black;
   border-radius: 5px;
   padding: 10px 20px;
@@ -93,7 +101,7 @@ nav ul li.login {
 }
 
 .dropdown-item {
-  color: white;
+  color: #00a6a6;
   padding: 10px 20px;
   text-decoration: none;
   font-size: 16px;
@@ -102,7 +110,7 @@ nav ul li.login {
 
 .dropdown-item:hover {
   background-color: #5E91B4;
-  color: white;
+  color: #00a6a6;
 }
 
 /* Responsivo */
@@ -115,15 +123,24 @@ nav ul li.login {
     border-radius: 5px;
   }
 
+  .navbar-collapse {
+    display: none ;
+    width: 100%;
+  }
+  .navbar-collapse.show {
+    display: block ;
+  }
+
   .nav-item.dropdown .dropdown-menu {
-    position: static;
     display: none;
   }
 
   .nav-item.dropdown:hover .dropdown-menu {
     display: block;
+    position: static;
   }
   nav ul li a:hover {
     padding: none
   }
 }
+

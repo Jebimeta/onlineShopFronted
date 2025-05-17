@@ -1,57 +1,39 @@
 <shared-navbar></shared-navbar>
 <div class="container-userlist">
-  <ul class="card-items">
-    <li *ngFor="let customer of paginatedCustomers" class="user-item">
-      <div class="item-container">
-        <label>ID</label>
-        <div>{{ customer.id }}</div>
-      </div>
-      <div class="item-container">
-        <label>Email</label>
-        <div>{{ customer.email }}</div>
-      </div>
-      <div class="item-container">
-        <label>Nombre</label>
-        <div>{{ customer.name }}</div>
-      </div>
-      <div class="item-container">
-        <label>Apellido</label>
-        <div>{{ customer.surname }}</div>
-      </div>
-      <div class="item-container">
-        <label>Segundo Apellido</label>
-        <div>{{ customer.surname2 }}</div>
-      </div>
-      <div class="item-container">
-        <label>Región</label>
-        <div>{{ customer.region }}</div>
-      </div>
-      <div class="item-container">
-        <label>Dirección</label>
-        <div>{{ customer.address }}</div>
-      </div>
-      <div class="item-container">
-        <label>Provincia</label>
-        <div>{{ customer.province }}</div>
-      </div>
-      <div class="item-container">
-        <label>Ciudad</label>
-        <div>{{ customer.city }}</div>
-      </div>
-      <div class="item-container">
-        <label>Código Postal</label>
-        <div>{{ customer.postalCode }}</div>
-      </div>
-      <div class="item-container">
-        <label>Teléfono</label>
-        <div>{{ customer.phone }}</div>
-      </div>
-      <div class="item-container">
-        <label>Estado</label>
-        <div>{{ customer.status }}</div>
-      </div>
-    </li>
-  </ul>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Nombre completo</th>
+        <th>Región</th>
+        <th>Dirección</th>
+        <th>Provincia</th>
+        <th>Ciudad</th>
+        <th>C.Postal</th>
+        <th>Teléfono</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of paginatedCustomers">
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.name }} {{ customer.surname }} {{ customer.surname2 }}</td>
+        <td>{{ customer.region }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.province }}</td>
+        <td>{{ customer.city }}</td>
+        <td>{{ customer.postalCode }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.status ? 'Verificado' : 'No Verificado' }}</td>
+        <td>
+          <!-- Botón para editar -->
+          <button (click)="editCustomer(customer)" class="btn-edit">Editar</button>
+          <!-- Botón para eliminar -->
+          <button (click)="deleteCustomer(customer)" class="btn-delete">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="pagination-controls">

@@ -15,9 +15,13 @@ import { ProductResponse } from '../../../shared/models/product.model';
 export default class ProductDetailsComponent {
 
   public productService = inject( ProductService );
+
   public activatedRoute = inject( ActivatedRoute );
+
   public router = inject( Router );
+  
   public product?: ProductResponse;
+
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -27,10 +31,6 @@ export default class ProductDetailsComponent {
       )
       .subscribe({
         next: product => {
-          if (!product) {
-            this.router.navigateByUrl('/shop/products');
-            return;
-          }
           this.product = product;
           this.cdr.detectChanges();
         },

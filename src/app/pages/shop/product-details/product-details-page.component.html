@@ -4,15 +4,15 @@
 <div *ngIf="product; else noProduct">
   <h1>{{ product.name }}</h1>
   <img class="image" [src]="product.image" alt="{{ product.name }}" />
-  <p><strong>Description:</strong> {{ product.description }}</p>
-  <p><strong>Size:</strong> {{ product.size }}</p>
-  <p><strong>Type:</strong> {{ product.type }}</p>
-  <p><strong>Price:</strong> {{ product.price | currency }}</p>
+  <p><strong>Descripcion:</strong> {{ product.description }}</p>
+  <p><strong>Tamaño:</strong> {{ product.size }}</p>
+  <p><strong>Tipo:</strong> {{ product.type }}</p>
+  <p><strong>Precio:</strong> {{ product.price | currency }}</p>
   <button (click)="goBack()">Go Back</button>
 </div>
 
 <ng-template #noProduct>
-  <p>Product not found.</p>
-  <button (click)="goBack()">Go Back</button>
+  <p>Producto no encontrado.</p>
+  <button (click)="goBack()">Vuelve</button>
 </ng-template>
 

@@ -1,42 +1,36 @@
 .products-container {
-  background-color: #f8f9fa;
+  background-color: #fff;
+  padding: 20px;
 }
 
-.parallax2 {
-  background-image: url("/assets/images/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 
 .products h1 {
   text-align: center;
+  margin-top: 30px;
   margin-bottom: 30px;
   font-size: 3em;
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-  background-color: rgba(49, 141, 240, 0.7);
+  font-family: 'Playwrite DK Loopet', cursive;
+  color: #000000;
   padding: 20px 40px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
-  align-items: center;
 }
 
 .product-list {
   list-style-type: none;
   padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
 .product-item {
   margin: 20px 0;
-  flex: 0 1 100%;
-  max-width: 600px;
-  min-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 0 1 calc(25% - 50px);
+  min-width: 250px;
+  max-width: 300px;
   border-radius: 10px;
   overflow: hidden;
   background-color: #fff;
@@ -45,18 +39,18 @@
 
 .product-item:hover {
   transform: translateY(-10px);
-  border: 4px solid #002336;
-  background-color: #c0f7ff;
+  border: 1px solid #002336;
   font-weight: bolder;
 }
 
 .product-card {
   padding: 20px;
+
 }
 
 .product-image {
   width: 100%;
-  height: auto;
+  height: 350px;
   border-bottom: 1px solid #ddd;
   margin-bottom: 15px;
 }
@@ -68,8 +62,7 @@
 .product-name {
   font-size: 1.5em;
   margin: 10px 0;
-  color: #007bff;
-  text-decoration: underline;
+  color: #000000;
 }
 
 .product-description {
@@ -86,7 +79,7 @@
 
 .product-price:hover {
   font-size: 20px;
-  color: red;
+
 }
 
 .buttons {
@@ -96,20 +89,22 @@
   margin-top: 20px;
   justify-content: space-between;
   gap: 5px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Playwrite DK Loopet', cursive;
 }
 
 .button-cart {
   padding: 10px 20px;
   font-size: 16px;
+  font-weight: bolder;
   cursor: pointer;
-  background-color: #147297;
+  background-color: #00a6a6;
   border-radius: 5px;
 }
 
 .button-cart:hover {
-  color: #ddd;
-  font-weight: bold;
+  background-color: #F08700;
+  font-weight: bolder;
+  
 }
 
 .button-paynow {
@@ -127,4 +122,46 @@
   font-weight: bolder;
   color: red;
   text-shadow: 0 0 8px #dadada
+}
+
+@media (max-width: 767px) {
+
+  .product-item {
+    flex: 0 0 95%; /* 95% para pequeños márgenes laterales */
+    min-width: 40vh;
+    max-width: auto;
+    margin: 40px auto; /* Centrado con márgenes */
+    transition: all 0.3s ease; /* Transición suave */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra más suave */
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente todos los elementos hijos */
+    padding: 15px;
+  }
+
+  .product-list {
+    gap: 5px;
+    padding: 0 10px; /* Pequeño padding lateral */
+  }
+
+  .product-image {
+    width: 90%;
+    height: 50vh; /* Aumenta la imagen para móvil (opcional) */
+    object-fit: cover; /* Asegura que la imagen mantenga proporciones */
+    margin: 0 auto 15px; /* Centrado horizontal con margen inferior */
+    display: block; /* Necesario para que funcione margin auto */
+  }
+
+  .product-info {
+    padding: 20px; /* Más espacio interno */
+    width: 100%; /* Asegura que el texto ocupe todo el ancho */
+    text-align: center; /* Centra el texto (opcional) */
+  }
+
+  .buttons {
+    margin-top: 30px; /* Separa más los botones */
+  }
 }

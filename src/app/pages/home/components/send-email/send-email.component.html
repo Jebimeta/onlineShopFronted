@@ -1,64 +1,51 @@
 <div class="contact-container">
-  <!-- Contenedor 1 -->
-   <!-- Formulario -->
+  <!-- Formulario -->
   <div class="form-container">
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class=" d-flex flex-wrap">
-        <!-- Imagen ilustración
-        <div class="formulario-image">
-          <img src="/assets/images/ilustracion01.png" class="ilustracion-secondary" />
-        </div> -->
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="d-flex flex-wrap justify-content-center">
+      <div class="w-100 text-center">
+        <h3 class="text-uppercase contact-title">Contacta con nosotros</h3>
+      </div>
 
-        <!-- Formulario -->
-        <div class="justify-content-center d-flex flex-wrap">
-          <h3 class="text-uppercase contact-title">Contacta con nosotros</h3>
-          <div class="form-group">
-            <label for="senderName">Nombre:</label>
-            <input type="text" id="senderName" formControlName="senderName" placeholder="Ej: José" required />
-            <div *ngIf="contactForm.get('senderName')?.invalid && contactForm.get('senderName')?.touched">
-              <small class="text-danger">El nombre es requerido</small>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="phoneNumber">Teléfono:</label>
-            <input type="tel" id="phoneNumber" formControlName="phoneNumber" placeholder="Ej: 123 456 789" required />
-            <div *ngIf="contactForm.get('phoneNumber')?.invalid && contactForm.get('phoneNumber')?.touched">
-              <small class="text-danger">Número de teléfono inválido</small>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="gender">Género:</label>
-            <select id="gender" formControlName="gender" required>
-              <option value="">Seleccione</option>
-              <option value="Masculino">Masculino</option>
-              <option value="Femenino">Femenino</option>
-              <option value="Otro">Otro</option>
-            </select>
-            <div *ngIf="contactForm.get('gender')?.invalid && contactForm.get('gender')?.touched">
-              <small class="text-danger">Seleccione un género</small>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="emailMessage">Mensaje:</label>
-            <textarea id="emailMessage" formControlName="emailMessage" rows="4" placeholder="Introduzca tu mensaje aquí" required></textarea>
-            <div *ngIf="contactForm.get('emailMessage')?.invalid && contactForm.get('emailMessage')?.touched">
-              <small class="text-danger">El mensaje es requerido</small>
-            </div>
-          </div>
-
-          <div class="form-group submit d-flex justify-content-center">
-            <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
-          </div>
+      <div class="form-group">
+        <label for="senderName">Nombre:</label>
+        <input type="text" id="senderName" formControlName="senderName" placeholder="Ej: José" required />
+        <div *ngIf="contactForm.get('senderName')?.invalid && contactForm.get('senderName')?.touched">
+          <small class="text-danger">El nombre es requerido</small>
         </div>
-      </form>
-    </div>
-      <!-- Container 2 -->
-      <!-- Mapa de ubicación (iframe) -->
-<div class="map-container">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.7856098432057!2d-5.783574824434614!3d37.181565646109874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd127f0dbdf00b19%3A0x4087a59437727232!2sPl.%20del%20Altozano%2C%2041710%20Utrera%2C%20Sevilla!5e0!3m2!1ses!2ses!4v1746826198411!5m2!1ses!2ses" width="600" height="450" style="border: 1px;;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-</div>
+      </div>
 
+      <div class="form-group">
+        <label for="phoneNumber">Teléfono:</label>
+        <input type="tel" id="phoneNumber" formControlName="phoneNumber" placeholder="Ej: 123 456 789" required />
+        <div *ngIf="contactForm.get('phoneNumber')?.invalid && contactForm.get('phoneNumber')?.touched">
+          <small class="text-danger">Número de teléfono inválido</small>
+        </div>
+      </div>
 
+      <div class="form-group">
+        <label for="gender">Género:</label>
+        <select id="gender" formControlName="gender" required>
+          <option value="">Seleccione</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <div *ngIf="contactForm.get('gender')?.invalid && contactForm.get('gender')?.touched">
+          <small class="text-danger">Seleccione un género</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="emailMessage">Mensaje:</label>
+        <textarea id="emailMessage" formControlName="emailMessage" rows="4" placeholder="Introduzca tu mensaje aquí" required></textarea>
+        <div *ngIf="contactForm.get('emailMessage')?.invalid && contactForm.get('emailMessage')?.touched">
+          <small class="text-danger">El mensaje es requerido</small>
+        </div>
+      </div>
+
+      <div class="form-group submit w-100 text-center">
+        <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>

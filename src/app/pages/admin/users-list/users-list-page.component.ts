@@ -14,14 +14,21 @@ import { CustomerResponse } from '../../../shared/models/customer.model';
 export default class UsersListComponent implements OnInit {
 
   customers: CustomerResponse[] = [];
+
   paginatedCustomers: CustomerResponse[] = [];
+
   currentPage: number = 1;
+
   itemsPerPage: number = 5;
 
   private userService = inject(UserService);
+
   public cdr = inject(ChangeDetectorRef);
+
   private router = inject(Router);
+
   private route = inject(ActivatedRoute);
+
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -63,5 +70,22 @@ export default class UsersListComponent implements OnInit {
         queryParamsHandling: 'merge'
       });
     }
+  }
+
+  editCustomer(customer: CustomerResponse): void {
+
+    this.router.navigate(['/admin/users/edit/' + customer.id]);
+  }
+
+  deleteCustomer(customer: CustomerResponse): void {
+    this.userService.deleteCustomer(customer.id).subscribe(() => {
+      this.customers = this.customers.filter(c => c.id !== customer.id);
+      this.updatePaginatedCustomers();
+      this.router.navigate([], {
+        relativeTo: this.route,
+        queryParams: { page: this.currentPage },
+        queryParamsHandling: 'merge'
+      });
+    });
   }
 }
